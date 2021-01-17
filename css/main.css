@@ -1,0 +1,123 @@
+/* ###################################### */
+/* ###########      BODY     ############ */
+/* ###################################### */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    
+  }
+
+/* ###################################### */
+/* ###########      MENU     ############ */
+/* ###################################### */
+menu {
+    display:inline-block;
+	/*max-width:180px;*/
+    width:10%;
+    background-color:lightgray;
+    border: 4px black solid;
+    margin-top:5px;
+    margin-left:5px;
+}
+ul li {
+	display: block;
+	width:100%;
+    
+    padding:10px;
+    
+}
+ul li a {
+	display:block;
+	width:100%;
+	text-decoration:none;
+	color: #fff;
+	background-color: darkslategray;
+	border: black 1px solid;
+	text-align: center;
+    line-height:38px;
+    /*vertical-align: middle;*/
+}
+ul li a:hover {
+	background-color: #6f6fdc;
+	/*border:1px inset #5b5bd7;*/
+	font-weight: bold;
+}
+
+/* ###################################### */
+/* ###########      MAIN     ############ */
+/* ###################################### */
+#mainpage {
+	display: inline-block;
+	width: 85%;
+	vertical-align: top;
+      
+}
+
+/* ###################################### */
+/* #########  GAME INFO PANEL  ########## */
+/* ###################################### */
+#gameinfopanel{
+    display:inline-block;
+    width:100%;
+    vertical-align: top;
+    padding:10px;
+    border:4px solid black;
+    margin-right:10px;
+    margin-left:10px;
+    margin-top:5px;
+}
+#Score {
+    display:inline-block;
+    text-align:center;
+    font-size:25px;
+    width:33%;
+    
+}
+#lives {
+    display:inline-block;
+    text-align:center;
+    font-size:25px;
+    width:33%;
+}
+#Timer {
+    display:inline-block;
+    text-align:center;
+    font-size:25px;
+    width:33%;
+}
+
+
+/* ###################################### */
+/* ###########  GAME CANVAS  ############ */
+/* ###################################### */
+#gamecanvas {
+    margin:10px;
+	width:100%;
+	height:100%;
+   /* background-color:lightgray; */
+    background : url("../Images/Bgs/Stars1.png");
+    animation: animatedBackground 5s infinite linear;
+	background-repeat: repeat-y;
+    
+}
+
+@keyframes animatedBackground {
+    from {
+      background-position: 0 100%;
+     
+    }
+    to {
+      background-position: 0 -50%;
+      
+    }
+  }
+  /*
+  KATELIKSA MANUALLY STO -50%; gia na fenete smooth sto firefox me to sugkekrimeno load, elpizw na paizei etsi kai allou giati de vriskw me tipota na to kanw na treksei smoothly auto to pramma
+  */
+  
+ 
+  
+  
