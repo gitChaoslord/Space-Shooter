@@ -1,25 +1,33 @@
 //canvas detection,size and 2d thing
 var canvas = document.getElementById('gamecanvas');
+
 //document.addEventListener('keydown', PlayerMovement); -- caused the acceleration effect on movement, guess too much key logging
 var TimerText = document.getElementById('Timer');
-TimerText.textContent = "0s";
+TimerText.textContent = "Time: 0s";
 var ScoreText = document.getElementById('Score');
 ScoreText.textContent = "Score : 0";
 var GameScore = 0;
 var TimerSeconds = 0;
 var W = canvas.clientWidth;
 var H = canvas.clientHeight;
+
 var cntx = canvas.getContext('2d');
+
+var gamemenu = document.getElementById('gameinfopanel');
+canvas.height = window.innerHeight-gamemenu.clientHeight;
+canvas.width = window.innerWidth;
+
+
+var DisplayColBox = false;
+
 
 // ###################################### 
 // #######  Game Initialization   ####### 
 // ###################################### 
-
 var PlayerProjectiles = [];
 var EnemyProjectiles = [];
 
 // ena array gia ola ta enemy types
-
 
 //ena array gia tous enemies pou exei to current level
 var CurrentEnemies = [];
@@ -104,7 +112,10 @@ function InstantiatePlayer(){
             //to metefera sto render function
             //cntx.clearRect(0,0,canvas.width,canvas.height);
             cntx.strokeStyle = "red";
-            cntx.strokeRect(this.x,this.y,this.w,this.h);
+            if(DisplayColBox == true){
+                cntx.strokeRect(this.x,this.y,this.w,this.h);
+            }
+            
             //draw ship
             cntx.drawImage(PlayerShip.Ship,PlayerShip.x,PlayerShip.y,PlayerShip.w,PlayerShip.h)
             //save giati allios kindineuoume me puriniki katastrofh
@@ -114,13 +125,8 @@ function InstantiatePlayer(){
             
         },
         fire : function(){
-            if(Keys.fire){
                 var b = new Projectile(PlayerShip.x,PlayerShip.y,30);
-                this.PlayerProjectiles.push(b)
-
-
-               
-            };
+                PlayerProjectiles.push(b) // ebgala to this.
         }
     };
 };
@@ -149,8 +155,10 @@ function Enemy(x,y,s){
     this.ShipWep2Img = EnemyTypeNorm1wep2;
     this.draw = function(){
         //ship
-        cntx.strokeStyle = "red";
-        cntx.strokeRect(this.x,this.y,this.w,this.h);
+        if(DisplayColBox == true){
+            cntx.strokeStyle = "red";
+            cntx.strokeRect(this.x,this.y,this.w,this.h);
+        }
         cntx.drawImage(this.ShipImg,this.x,this.y,this.w,this.h);
         //weapon if anys
         cntx.drawImage(this.ShipWep1Img,this.x,this.y,this.w,this.h);
@@ -163,9 +171,9 @@ function Enemy(x,y,s){
         }
     }           
 }
-// ###################################### 
-// #########  PLAYER MOVEMENT   ######### 
-// ###################################### 
+// ###############################################  
+// #########  PLAYER MOVEMENT & FIRING   ######### 
+// ###############################################  
 
 //Movement keys array, needed for diagonial movement
 var Keys = {
@@ -183,8 +191,20 @@ window.onkeydown = function(e){
     if(kc === 39) Keys.right = true;
     if(kc === 40) Keys.down = true;
     //firing button
-    if( kc=== 32) Keys.fire = true;
-
+    //if( kc=== 32) Keys.fire = true;
+    if( kc === 32) {
+        
+        if(event.repeat){
+            if(Keys.fire == false){
+                Keys.fire = true;
+                PlayerShip.fire();
+                autofire = setInterval(function(){PlayerShip.fire();if(Keys.fire == false ){clearInterval(autofire)}}, PlayerShip.WepFirerate);
+            }
+        }
+        else{
+            PlayerShip.fire();
+        }
+    }
 };
 window.onkeyup = function(e){
     var kc = e.keyCode;
@@ -236,8 +256,10 @@ function Projectile(x,y,s){
     this.w = 32; // projectile width;
     this.h = 32; // projectile height; na ta valw panw pali
     this.draw = function(){
-        cntx.strokeStyle = "red";
-        cntx.strokeRect(this.x,this.y,this.w,this.h);
+        if(DisplayColBox == true){
+            cntx.strokeStyle = "red";
+            cntx.strokeRect(this.x,this.y,this.w,this.h);
+        }
         cntx.drawImage(CannonProjectile,this.x,this.y,this.w,this.h);
         
     }
@@ -259,10 +281,10 @@ function TimerUpdate(){
         TimerSeconds=0;
     }
     if(mincount==0){
-        TimerText.textContent = TimerSeconds+"s";
+        TimerText.textContent = "Time: " + TimerSeconds+"s";
     }else
     {
-        TimerText.textContent = mincount+ "m " +TimerSeconds+"s";
+        TimerText.textContent ="Time: " + mincount+ "m " +TimerSeconds+"s";
     }
     
 }
@@ -328,6 +350,7 @@ function ProjectileCollision(Proj,Ship){
 // ###################################### 
 // ############  RENDERING   ############
 // ######################################
+
 var PlayerIsAlive = 1;
 function Renderer(){
     cntx.clearRect(0,0,canvas.width,canvas.height);
@@ -347,58 +370,24 @@ function Renderer(){
     });
     //recalls itself if some PlayerIsAlive is met(game is not over), (player is alive or smth will do it later) ---- used setinterval on window.onload before, seems bad practise
     if( PlayerIsAlive == 1){
-        window.requestAnimationFrame(Renderer);
+       window.requestAnimationFrame(Renderer);
     }
 }
 // ###################################### 
-// ############    OTHER    ############# 
+// ###########    UTILITY    ############ 
 // ######################################
+
+function DisplayCollisionBoxes(){
+    DisplayColBox = true;
+}
+
 window.onload = function ()
     {
         Initialize();
         //start rendering process
         Renderer();
         
-        setInterval(PlayerShip.fire, PlayerShip.WepFirerate);
+        //setInterval(PlayerShip.fire, PlayerShip.WepFirerate);
         //setInterval(Renderer,25);
         setInterval(TimerUpdate, 1000);
     }
-// ###################################### 
-// ############   NOTES    ##############
-// ######################################
-
-//setInterval(PlayerMovement, 25); kaleite sto UpdaterPositions pou kaleite apo recursion tou renderer
-//  EnemyNormShip = {
-//      //location and size variables -- Arnhtika giati me to rotation to 0 allazei thesei me to canvas.width/height
-//       x : -canvas.width/2 - 64, // (to +64 einai to miso width, gia na bgenei pio kentro )
-//       y : -100,
-//       w : 128,
-//       h : 128,
-//       speed : 5,
-//       hp : 1,
-//       Dmg : 1,
-//       ShipImage : EnemyTypeNorm1, 
-//
-//       draw : function(){         
-//           cntx.rotate(180*Math.PI/180);
-//           cntx.drawImage(EnemyNormShip.ShipImage,EnemyNormShip.x,EnemyNormShip.y,EnemyNormShip.w,EnemyNormShip.h);
-//           //cntx.restore();
-//       },
-//       update : function(){
-//           this.y = this.y - this.speed;
-//       },
-//       shoot : function(){
-//
-//       }
-//  }
-
-// dokimasw na kanw generate enemies xwris rotated canvas
-
-
-
-//cntx.rotate(Math.PI);
-    //cntx.translate(0,0,canvas.width,canvas.height);
-    //cntx.rotate(Math.PI);
-    //to eftiaksa, eixa ta functions save,restore mesa sto object enemy kai gamiotan pou kai pou
-    //cntx.save();
-       // cntx.restore();
