@@ -89,6 +89,8 @@ function MapLoad(MapLvl){
     }
     
     InstantiateEnemyWaves(enemyWaves);
+    //start renderer here to avoid calling on window onload cause it causes errors
+    Renderer();
 };
 function InstantiatePlayer(){
     PlayerShip = { 
@@ -385,7 +387,7 @@ window.onload = function ()
     {
         Initialize();
         //start rendering process
-        Renderer();
+       // Renderer();
         
         //setInterval(PlayerShip.fire, PlayerShip.WepFirerate);
         //setInterval(Renderer,25);
