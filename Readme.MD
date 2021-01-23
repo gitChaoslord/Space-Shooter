@@ -1,7 +1,9 @@
 Demo space shooter game i made by toying a bit with html canvas  
 
+See it in action here - https://gitchaoslord.github.io/Space-Shooter/  
+
 There is only 1 wave of enemies.  
-Move with arrows and fire by holding down space.  
+Move around with the arrow keys and fire by pressing/holding space.  
 
 
 Spaceship assets belong to zintoki  
