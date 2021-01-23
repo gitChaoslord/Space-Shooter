@@ -39,11 +39,11 @@ function Initialize(){
     //%%%%%%%% IMAGE LOADING %%%%%%%%
     //Player Ship images
     ShipLvl1 = new Image(); 
-    ShipLvl1.src = "./Images/Ships/medium/body_01.png";
+    ShipLvl1.src = "./Images/Ships/Medium/body_01.png";
     ShipLvl2 = new Image();
-    ShipLvl2.src = "./Images/Ships/medium/body_02.png";
+    ShipLvl2.src = "./Images/Ships/Medium/body_02.png";
     ShipLvl3 = new Image();
-    ShipLvl3.src = "./Images/Ships/medium/body_03.png";
+    ShipLvl3.src = "./Images/Ships/Medium/body_03.png";
     // normal enemies
     EnemyTypeNorm1 = new Image();
     EnemyTypeNorm1.src = "Images/Others/Mechs/torso_01.png";
