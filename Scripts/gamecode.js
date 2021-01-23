@@ -57,18 +57,18 @@ function Initialize(){
 
     // WEAPON - CANNONS
     WepCannon1 = new Image();
-    WepCannon1.src = "./Images/Weapons/medium/cannon/turret_01_mk1.png";
+    WepCannon1.src = "./Images/Weapons/Medium/Cannon/turret_01_mk1.png";
     WepCannon2 = new Image();
-    WepCannon2.src = "./Images/Weapons/medium/cannon/turret_01_mk2.png";
+    WepCannon2.src = "./Images/Weapons/Medium/Cannon/turret_01_mk2.png";
     WepCannon3 = new Image();
-    WepCannon3.src = "./Images/Weapons/medium/cannon/turret_01_mk3.png";
+    WepCannon3.src = "./Images/Weapons/Medium/Cannon/turret_01_mk3.png";
     // WEAPON - LASERS
     WepLaser1 = new Image();
-    WepLaser1.src = "./Images/Weapons/medium/laser/turret_02_mk1.png";
+    WepLaser1.src = "./Images/Weapons/Medium/Laser/turret_02_mk1.png";
     WepLaser2 = new Image();
-    WepLaser2.src = "./Images/Weapons/medium/laser/turret_02_mk2.png";
+    WepLaser2.src = "./Images/Weapons/Medium/Laser/turret_02_mk2.png";
     WepLaser3 = new Image();
-    WepLaser3.src = "./Images/Weapons/medium/laser/turret_02_mk3.png";
+    WepLaser3.src = "./Images/Weapons/Medium/Laser/turret_02_mk3.png";
     // WEAPON - MISSILES
     // WEAPON - PLASMA
 
