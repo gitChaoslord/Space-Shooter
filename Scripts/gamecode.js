@@ -39,42 +39,42 @@ function Initialize(){
     //%%%%%%%% IMAGE LOADING %%%%%%%%
     //Player Ship images
     ShipLvl1 = new Image(); 
-    ShipLvl1.src = "Images/Ships/medium/body_01.png";
+    ShipLvl1.src = "./Images/Ships/medium/body_01.png";
     ShipLvl2 = new Image();
-    ShipLvl2.src = "Images/Ships/medium/body_02.png";
+    ShipLvl2.src = "./Images/Ships/medium/body_02.png";
     ShipLvl3 = new Image();
-    ShipLvl3.src = "Images/Ships/medium/body_03.png";
+    ShipLvl3.src = "./Images/Ships/medium/body_03.png";
     // normal enemies
     EnemyTypeNorm1 = new Image();
     EnemyTypeNorm1.src = "Images/Others/Mechs/torso_01.png";
     EnemyTypeNorm1wep1 =new Image();
     EnemyTypeNorm1wep2 = new Image();
-    EnemyTypeNorm1wep1.src = "Images/Others/Mechs/weapon_left.png";
-    EnemyTypeNorm1wep2.src = "Images/Others/Mechs/weapon_right.png";
+    EnemyTypeNorm1wep1.src = "./Images/Others/Mechs/weapon_left.png";
+    EnemyTypeNorm1wep2.src = "./Images/Others/Mechs/weapon_right.png";
     // bosses
     
     
 
     // WEAPON - CANNONS
     WepCannon1 = new Image();
-    WepCannon1.src = "Images/Weapons/medium/cannon/turret_01_mk1.png";
+    WepCannon1.src = "./Images/Weapons/medium/cannon/turret_01_mk1.png";
     WepCannon2 = new Image();
-    WepCannon2.src = "Images/Weapons/medium/cannon/turret_01_mk2.png";
+    WepCannon2.src = "./Images/Weapons/medium/cannon/turret_01_mk2.png";
     WepCannon3 = new Image();
-    WepCannon3.src = "Images/Weapons/medium/cannon/turret_01_mk3.png";
+    WepCannon3.src = "./Images/Weapons/medium/cannon/turret_01_mk3.png";
     // WEAPON - LASERS
     WepLaser1 = new Image();
-    WepLaser1.src = "Images/Weapons/medium/laser/turret_02_mk1.png";
+    WepLaser1.src = "./Images/Weapons/medium/laser/turret_02_mk1.png";
     WepLaser2 = new Image();
-    WepLaser2.src = "Images/Weapons/medium/laser/turret_02_mk2.png";
+    WepLaser2.src = "./Images/Weapons/medium/laser/turret_02_mk2.png";
     WepLaser3 = new Image();
-    WepLaser3.src = "Images/Weapons/medium/laser/turret_02_mk3.png";
+    WepLaser3.src = "./Images/Weapons/medium/laser/turret_02_mk3.png";
     // WEAPON - MISSILES
     // WEAPON - PLASMA
 
     // PROJECTILES
     CannonProjectile = new Image();
-    CannonProjectile.src = "Images/Projectiles/turret_01_bullet_01.png";
+    CannonProjectile.src = "./Images/Projectiles/turret_01_bullet_01.png";
 
     //Start Game at first map
     MapLoad(1);
