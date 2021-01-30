@@ -43,13 +43,13 @@
 /* ###################################### */
 #gamecanvas {
     background-color:lightgray;
-    /* background : url("../Images/Bgs/Stars1.png");
+     background : url("../Images/Bgs/Stars1.png");
     animation: animatedBackground 5s infinite linear;
     background-repeat: repeat-y;
-        */
+        
     }
 
-/* @keyframes animatedBackground {
+ @keyframes animatedBackground {
     from {
       background-position: 0 100%;
      
@@ -58,7 +58,7 @@
       background-position: 0 -50%;
       
     }
-  } */
+  } 
   /*
   KATELIKSA MANUALLY STO -50%; gia na fenete smooth sto firefox me to sugkekrimeno load, elpizw na paizei etsi kai allou giati de vriskw me tipota na to kanw na treksei smoothly auto to pramma
   */

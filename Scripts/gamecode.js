@@ -46,7 +46,7 @@ function Initialize(){
     ShipLvl3.src = "./Images/Ships/Medium/body_03.png";
     // normal enemies
     EnemyTypeNorm1 = new Image();
-    EnemyTypeNorm1.src = "Images/Others/Mechs/torso_01.png";
+    EnemyTypeNorm1.src = "./Images/Others/Mechs/torso_01.png";
     EnemyTypeNorm1wep1 =new Image();
     EnemyTypeNorm1wep2 = new Image();
     EnemyTypeNorm1wep1.src = "./Images/Others/Mechs/weapon_left.png";
