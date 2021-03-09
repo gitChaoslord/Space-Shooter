@@ -43,7 +43,7 @@
 /* ###################################### */
 #gamecanvas {
     background-color:lightgray;
-    background: url('./Images/Bgs/Stars1.png');
+    background: url('../Images/Bgs/Stars1.png');
     animation: animatedBackground 5s infinite linear;
     background-repeat: repeat-y;
         

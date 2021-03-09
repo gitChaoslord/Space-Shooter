@@ -11,3 +11,7 @@ You can find them here
 https://zintoki.itch.io/space-breaker  
 
 
+TODO
+Add more waves and a boss
+Enemies that also fire
+Lives/Respawn system
