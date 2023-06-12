@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Command</title>
-    <link rel="stylesheet" href="css/main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Space Shooter</title>
+	<meta name="theme-color" content="#000000" />
+	<link rel="stylesheet" href="assets/css/variables.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/controls.css">
 </head>
+
 <body>
-	<div id="gameinfopanel">
-		<div id="lives">3</div>
-		<div id="Score">Score : 500</div>
-		<div id="Timer">2m:31s</div>
+	<noscript>Javascript must be enabled in order to run this application.</noscript>
+	<div id="game">
+		<canvas id="gamecanvas"></canvas>
+
+		<div id="controls">
+			<h3 class="controls-title">Controls</h3>
+			<div style="display: inline-grid;align-self: end; grid-column-gap: 0">
+				<kbd style="grid-column-start: 2;">W</kbd>
+				<kbd style="grid-column-start: 1;">A</kbd>
+				<kbd style="grid-column-start: 2;">S</kbd>
+				<kbd style="grid-column-start: 3;">D</kbd>
+				<kbd style="grid-column-start: 1;grid-column-end: 4;">Space</kbd>
+			</div>
+		</div>
 	</div>
-	
-	<canvas id='gamecanvas'></canvas>
+
+
+	<script src="scripts/game.js"></script>
 </body>
-<script src="Scripts/gamecode.js"></script> 
+
 </html>
