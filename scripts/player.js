@@ -53,13 +53,13 @@ class Player {
     }
 
     if (this.isMovingLeft) {
-      if (!(this.x <= this.size.w / 2)) {
+      if (!(this.x <= this.size.width / 2)) {
         this.x -= this.speed;
       }
     }
 
     if (this.isMovingRight) {
-      if (!(this.x > canvas.width - this.size.w - 25)) {
+      if (!(this.x > canvas.width - this.size.width - 25)) {
         this.x += this.speed;
       }
     }
