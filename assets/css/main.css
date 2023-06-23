@@ -11,6 +11,8 @@ body {
 
 canvas {
   display: block;
+  /* border: red solid 2px; */
+  height: 100vh;
 }
 
 #game {
