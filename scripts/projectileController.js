@@ -29,7 +29,7 @@ class ProjectileController {
 
 class Projectile {
   constructor(x, y, speed, damage) {
-    this.x = x;
+    this.x = x - 16;
     this.y = y;
     this.speed = speed;
     this.damage = damage;

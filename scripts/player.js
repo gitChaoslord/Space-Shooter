@@ -76,9 +76,9 @@ class Player {
     this.move();
     this.shoot();
     context.imageSmoothingEnabled = true;
-    context.strokeStyle = "red";
 
     if (isDebugging) {
+      context.strokeStyle = "red";
       context.strokeRect(this.x, this.y, this.size.width, this.size.height);
     }
 
